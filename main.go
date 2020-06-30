@@ -14,42 +14,42 @@ func main() {
 			Type:    []string{"Dragon", "Ghost"},
 			Item:    "Weakness Policy",
 			Ability: "Clear Body",
-			Moves:   nil,
+			Moves:   []string{"Dragon Darts", "Phantom Force", "Fly", "Draco Meteor"},
 		},
 		{
 			Name:    "Arcanine",
 			Type:    []string{"Fire"},
 			Item:    "Assault Vest",
 			Ability: "Intimidate",
-			Moves:   nil,
+			Moves:   []string{"Dragon Darts", "Phantom Force", "Fly", "Protect"},
 		},
 		{
 			Name:    "Rotom",
 			Type:    []string{"Electric", "Water"},
 			Item:    "Sitrus Berry",
 			Ability: "Levitate",
-			Moves:   nil,
+			Moves:   []string{"Thunderbolt", "Phantom Force", "Fly", "Protect"},
 		},
 		{
 			Name:    "Tyranitar",
 			Type:    []string{"Rock", "Dark"},
 			Item:    "Focus Sash",
 			Ability: "Sand Stream",
-			Moves:   nil,
+			Moves:   []string{"Crunch", "Phantom Force", "Fly", "Protect"},
 		},
 		{
 			Name:    "foo",
 			Type:    []string{"Dragon", "Ghost"},
 			Item:    "bar",
 			Ability: "foobar",
-			Moves:   nil,
+			Moves:   []string{"foo", "Phantom Force", "Fly", "Protect"},
 		},
 		{
 			Name:    "Togekiss",
 			Type:    []string{"Fairy", "Flying"},
 			Item:    "Scope Lens",
 			Ability: "Super Luck",
-			Moves:   nil,
+			Moves:   []string{"Heat Wave", "Phantom Force", "Fly", "Protect"},
 		},
 	}
 
@@ -77,6 +77,14 @@ func main() {
 	}
 
 	bg, err = utils.AppendInfo(bg, &pms)
+	if err != nil {
+		panic(err)
+	}
+
+	bg, err = utils.AppendMoves(bg, &pms)
+	if err != nil {
+		panic(err)
+	}
 
 	// Save an image
 	err = utils.SaveImage(bg, "outimage.png")
