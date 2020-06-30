@@ -81,6 +81,11 @@ func main() {
 		panic(err)
 	}
 
+	bg, err = utils.AppendTypes(bg, &pms)
+	if err != nil {
+		panic(err)
+	}
+
 	bg, err = utils.AppendMoves(bg, &pms)
 	if err != nil {
 		panic(err)

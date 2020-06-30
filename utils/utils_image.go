@@ -37,7 +37,7 @@ var (
 		{PointsMoveIconsX + OffsetX, PointsMoveIconsY + OffsetY*2},
 	}
 	// 4. Types
-	PointsTypesX = 180
+	PointsTypesX = 200
 	PointsTypesY = 24
 	PointsTypes = []image.Point{
 		{PointsTypesX, PointsTypesY},
@@ -148,7 +148,7 @@ func AppendTypes(canvas image.Image, pokemonList *[]Pokemon) (image.Image, error
 		return nil, err
 	}
 
-	lineSpace := 6
+	lineSpace := 36
 
 	// Append a type bar func
 	appendAType := func(canvas image.Image, t string, pt image.Point) (image.Image, error) {
